@@ -1,7 +1,7 @@
-FROM docker:18.09
+FROM docker:27.5
 
 LABEL maintainer="docker@marekurban.de"
 
-RUN wget -q https://storage.googleapis.com/kubernetes-release/release/v1.14.3/bin/linux/amd64/kubectl && \
+RUN wget -q curl -LO https://dl.k8s.io/release/v1.32.0/bin/linux/amd64/kubectl && \
   chmod +x kubectl && \
   mv kubectl /usr/local/bin/
